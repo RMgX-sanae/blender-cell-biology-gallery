@@ -1,0 +1,93 @@
+{
+  "model": "垂直流超净工作台",
+  "axes": "glTF +Y up, +Z front",
+  "assembled_camera": {
+    "position": [
+      3.35,
+      3.37,
+      6.45
+    ],
+    "target": [
+      0,
+      1.38,
+      0
+    ]
+  },
+  "exploded_camera": {
+    "position": [
+      3.72,
+      4.85,
+      7.1
+    ],
+    "target": [
+      -0.3,
+      2.12,
+      0.12
+    ]
+  },
+  "parts": [
+    {
+      "node": "Frame",
+      "label": "机架与工作腔",
+      "explode": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "node": "Worktop",
+      "label": "工作面",
+      "explode": [
+        -0.32,
+        0.035,
+        1.25
+      ]
+    },
+    {
+      "node": "Sash",
+      "label": "透明前窗",
+      "explode": [
+        2.02,
+        0.12,
+        0.64
+      ]
+    },
+    {
+      "node": "Filter",
+      "label": "主过滤盒",
+      "explode": [
+        0.02,
+        0.46,
+        0.04
+      ]
+    },
+    {
+      "node": "Blower",
+      "label": "送风机组",
+      "explode": [
+        0.04,
+        0.97,
+        -0.03
+      ]
+    },
+    {
+      "node": "Prefilter",
+      "label": "进风预滤网",
+      "explode": [
+        0.04,
+        1.5,
+        -0.09
+      ]
+    },
+    {
+      "node": "Hood",
+      "label": "顶罩与控制面板",
+      "explode": [
+        -2.22,
+        0.57,
+        0.3
+      ]
+    }
+  ]
+}

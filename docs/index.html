@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f1f4fd">
+  <title>微形 Microforma | Blender Cell Biology 互动作品展</title>
+  <meta name="description" content="Blender Cell Biology skill 的互动作品展。旋转与拆解三维装配，观看细胞机制动画，并在 GitHub 查看制作流程。">
+  <meta property="og:title" content="微形 Microforma | Blender Cell Biology">
+  <meta property="og:description" content="可旋转、可拆解的 Blender 细胞建模作品展。">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://rmgx-sanae.github.io/blender-cell-biology-gallery/assets/exhibition.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="微形互动展厅首页与可拆解的血蓝蛋白十聚体">
+  <meta property="og:url" content="https://rmgx-sanae.github.io/blender-cell-biology-gallery/">
+  <link rel="canonical" href="https://rmgx-sanae.github.io/blender-cell-biology-gallery/">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preload" as="image" href="assets/plates/hemocyanin-cut.webp" imagesrcset="assets/plates/hemocyanin-cut-s.webp 590w, assets/plates/hemocyanin-cut.webp 969w" imagesizes="(max-width: 730px) 68vw, 39vw">
+  <link rel="stylesheet" href="gallery.css">
+  <script defer src="gallery.js"></script>
+</head>
+<body id="top">
+  <a class="skip" href="#catalog">跳至展品目录</a>
+  <header class="masthead wrap">
+    <a class="brand" href="#top" aria-label="微形 Microforma 首页"><img src="assets/mark.svg" width="41" height="41" alt=""><span class="wordmark" lang="en">MICROFORMA</span><span class="brand-zh">微形</span></a>
+    <nav aria-label="主导航">
+      <a href="#catalog">展品目录</a>
+      <button type="button" class="nav-about" data-about>关于展厅</button>
+      <button type="button" class="nav-film" data-film><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#player-play"></use></svg><span>放映室</span></button>
+      <a class="screening repo-link" href="https://github.com/RMgX-sanae/blender-cell-biology" target="_blank" rel="noopener noreferrer" aria-label="在 GitHub 查看 Blender Cell Biology skill"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#brand-github"></use></svg><span>GitHub</span><svg class="icon repo-arrow" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="精选展品" aria-roledescription="轮播">
+      <div class="hero-layout wrap" data-feature="hemocyanin">
+        <div class="hero-copy">
+          <div class="feature-kicker"><span class="kicker-rule"></span><span lang="en">Blender Cell Biology</span> Skill 作品展<span class="kicker-slash">/</span><span id="feature-kind">分子装配</span></div>
+          <h1 id="feature-title">血蓝蛋白</h1>
+          <p class="hero-latin" id="feature-latin" lang="en">Hemocyanin</p>
+          <p class="hero-summary" id="feature-summary">十个亚基围成中空的桶。
+太平洋褶柔鱼靠它在血液中运送氧。</p>
+          <button type="button" class="primary-action" id="feature-open"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#stack-2"></use></svg><span>拆解模型</span><svg class="icon action-arrow" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg></button>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <svg class="art-print" viewBox="0 0 760 580" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
+            <defs>
+              <pattern id="print-check" width="24" height="24" patternUnits="userSpaceOnUse"><path fill="#1536aa" d="M0 0h12v12H0zM12 12h12v12H12z"/></pattern>
+              <pattern id="print-stripes" width="13" height="13" patternUnits="userSpaceOnUse" patternTransform="rotate(36)"><path d="M0 0v13" stroke="#1234a5" stroke-width="5"/></pattern>
+              <pattern id="print-slat" width="20" height="20" patternUnits="userSpaceOnUse" patternTransform="rotate(-31)"><path d="M0 0v20" stroke="#1334a4" stroke-width="9"/></pattern>
+              <clipPath id="print-arc"><path d="M534 30h168v186H558z"/></clipPath>
+              <clipPath id="print-groove"><path d="M31 345h184v156H36z"/></clipPath>
+            </defs>
+            <g class="plate-shape plate-molecule">
+              <g transform="rotate(-22 380 289)">
+                <path fill="#002fa7" d="M103 271a261 261 0 0 1 522 0z"/>
+                <path fill="#4562f1" d="M129 291h522a261 261 0 0 1-522 0z"/>
+              </g>
+              <g class="fan-ink" fill="#103695"><path d="M587.3 161.2L572.5 20.0A177 177 0 0 1 582.1 19.2L589.2 161.0Z"/><path d="M591.2 161.0L592.1 19.0A177 177 0 0 1 601.7 19.3L593.1 161.1Z"/><path d="M595.1 161.2L611.7 20.2A177 177 0 0 1 621.2 21.6L597.0 161.5Z"/><path d="M598.9 161.9L631.0 23.6A177 177 0 0 1 640.3 26.0L600.7 162.4Z"/><path d="M602.6 163.0L649.8 29.1A177 177 0 0 1 658.8 32.5L604.4 163.7Z"/><path d="M606.2 164.5L667.9 36.6A177 177 0 0 1 676.5 41.0L607.9 165.4Z"/><path d="M609.6 166.4L685.1 46.1A177 177 0 0 1 693.1 51.4L611.2 167.4Z"/><path d="M612.8 168.6L701.1 57.4A177 177 0 0 1 708.5 63.6L614.2 169.8Z"/><path d="M615.7 171.2L715.8 70.5A177 177 0 0 1 722.4 77.4L617.0 172.6Z"/><path d="M618.3 174.1L728.9 85.0A177 177 0 0 1 734.7 92.7L619.4 175.6Z"/><path d="M620.5 177.2L740.3 101.0A177 177 0 0 1 745.3 109.2L621.5 178.8Z"/><path d="M622.4 180.6L749.9 118.1A177 177 0 0 1 753.9 126.8L623.2 182.3Z"/><path d="M623.9 184.2L757.6 136.1A177 177 0 0 1 760.6 145.3L624.5 186.0Z"/><path d="M625.0 187.9L763.2 154.9A177 177 0 0 1 765.1 164.4L625.4 189.7Z"/><path d="M625.7 191.7L766.7 174.2A177 177 0 0 1 767.6 183.8L625.9 193.6Z"/><path d="M626.0 195.6L768.0 193.8A177 177 0 0 1 767.8 203.4L626.0 197.5Z"/><path d="M625.8 199.4L767.1 213.4A177 177 0 0 1 765.9 223.0L625.6 201.3Z"/></g>
+              <g clip-path="url(#print-groove)" fill="none" stroke="#183cb8" stroke-width="3.2"><circle cx="22" cy="498" r="22"/><circle cx="22" cy="498" r="31"/><circle cx="22" cy="498" r="40"/><circle cx="22" cy="498" r="49"/><circle cx="22" cy="498" r="58"/><circle cx="22" cy="498" r="67"/><circle cx="22" cy="498" r="76"/><circle cx="22" cy="498" r="85"/><circle cx="22" cy="498" r="94"/><circle cx="22" cy="498" r="103"/><circle cx="22" cy="498" r="112"/><circle cx="22" cy="498" r="121"/><circle cx="22" cy="498" r="130"/><circle cx="22" cy="498" r="139"/><circle cx="22" cy="498" r="148"/><circle cx="22" cy="498" r="157"/><circle cx="22" cy="498" r="166"/><circle cx="22" cy="498" r="175"/><circle cx="22" cy="498" r="184"/><circle cx="22" cy="498" r="193"/><circle cx="22" cy="498" r="202"/><circle cx="22" cy="498" r="211"/><circle cx="22" cy="498" r="220"/></g>
+              <path fill="url(#print-check)" d="M585 409h127v110H551z"/>
+              <path fill="#0e2667" d="m61 176 58-31-16 56z"/>
+            </g>
+            <g class="plate-shape plate-workbench">
+              <path fill="#bad0fc" d="M109 76h467v65h61v324H170v-49h-61z"/>
+              <path fill="#1948d0" d="M83 92h184v57H155v135H83z"/>
+              <path fill="#002fa7" d="M578 243h66v166h58v66h-58v55H454v-61h124z"/>
+              <path fill="url(#print-stripes)" d="M503 37h189v116H503z"/>
+              <path fill="url(#print-check)" d="M38 369h145v101H38z"/>
+              <path fill="none" stroke="#2b52c5" stroke-width="2" d="M50 337V188h39m485 312h114v-66"/>
+            </g>
+            <g class="plate-shape plate-axon">
+              <path fill="#a9c4ff" d="m120 306 378-235 143 187-377 236z"/>
+              <path fill="#002fa7" d="m28 352 450-299 31 46L59 398z"/>
+              <path fill="#405ff2" d="m175 500 471-315 32 47-470 316z"/>
+              <path fill="url(#print-slat)" d="m27 265 184-122 24 102L51 369z"/>
+              <g clip-path="url(#print-arc)" fill="none" stroke="#13379c" stroke-width="3.2"><circle cx="706" cy="20" r="24"/><circle cx="706" cy="20" r="33"/><circle cx="706" cy="20" r="42"/><circle cx="706" cy="20" r="51"/><circle cx="706" cy="20" r="60"/><circle cx="706" cy="20" r="69"/><circle cx="706" cy="20" r="78"/><circle cx="706" cy="20" r="87"/><circle cx="706" cy="20" r="96"/><circle cx="706" cy="20" r="105"/><circle cx="706" cy="20" r="114"/><circle cx="706" cy="20" r="123"/><circle cx="706" cy="20" r="132"/><circle cx="706" cy="20" r="141"/><circle cx="706" cy="20" r="150"/><circle cx="706" cy="20" r="159"/><circle cx="706" cy="20" r="168"/><circle cx="706" cy="20" r="177"/><circle cx="706" cy="20" r="186"/><circle cx="706" cy="20" r="195"/><circle cx="706" cy="20" r="204"/><circle cx="706" cy="20" r="213"/><circle cx="706" cy="20" r="222"/><circle cx="706" cy="20" r="231"/><circle cx="706" cy="20" r="240"/><circle cx="706" cy="20" r="249"/><circle cx="706" cy="20" r="258"/><circle cx="706" cy="20" r="267"/><circle cx="706" cy="20" r="276"/><circle cx="706" cy="20" r="285"/></g>
+              <path fill="#132b74" d="m548 496 124-84-34 112z"/>
+            </g>
+          </svg>
+          <div class="orbit orbit-back"></div>
+          <div class="object-rail"><img id="feature-image" class="hero-object" alt="" fetchpriority="high" src="assets/plates/hemocyanin-cut.webp" srcset="assets/plates/hemocyanin-cut-s.webp 590w, assets/plates/hemocyanin-cut.webp 969w" sizes="(max-width: 730px) 68vw, 39vw"></div>
+          <div class="orbit orbit-front"></div>
+          <div class="orbit-motion"><i></i></div>
+          <div class="art-caption"><span></span><span id="feature-ref">PDB 6R83</span></div>
+        </div>
+        <div class="feature-pages" aria-label="切换精选展品">
+          <button type="button" class="circle-control" id="feature-prev" aria-label="上一个精选展品"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-left"></use></svg></button>
+          <span class="page-count"><b id="feature-current">01</b><span>/</span>03</span>
+          <button type="button" class="circle-control" id="feature-next" aria-label="下一个精选展品"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></button>
+          <button type="button" class="motion-toggle" id="motion-toggle" aria-label="暂停几何动效" aria-pressed="true" title="暂停几何动效"><span class="motion-glyph" aria-hidden="true"></span></button>
+        </div>
+      </div>
+      <p class="sr-only" role="status" id="feature-status"></p>
+    </section>
+
+    <section class="catalog wrap" id="catalog" aria-labelledby="catalog-title">
+      <div class="catalog-head">
+        <div class="catalog-title"><h2 id="catalog-title">展品目录</h2><span class="catalog-count" aria-label="共六件作品">06</span></div>
+        <div class="filters" role="group" aria-label="按作品类型筛选">
+          <button type="button" data-filter="all" aria-pressed="true">全部</button>
+          <button type="button" data-filter="model" aria-pressed="false">互动模型</button>
+          <button type="button" data-filter="atlas" aria-pressed="false">结构图集</button>
+          <button type="button" data-filter="film" aria-pressed="false">机制动画</button>
+        </div>
+      </div>
+      <div id="work-grid" class="work-grid"></div>
+      <noscript><p>启用 JavaScript 可旋转模型并打开作品。也可直接观看<a href="assets/films/vatpase.mp4">质子泵短片</a>，或查看<a href="assets/plates/hemo-whole.webp">血蓝蛋白原图</a>。</p></noscript>
+      <span class="sr-only" role="status" id="filter-status"></span>
+    </section>
+    <section class="project-invite" aria-labelledby="project-title"><div class="invite-layout wrap">
+      <div class="invite-symbol" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="invite-copy"><h2 id="project-title">用这个 Skill 建模</h2><p>在 GitHub 查看建模脚本、结构来源和 Blender 制作流程。</p></div>
+      <a class="invite-link" href="https://github.com/RMgX-sanae/blender-cell-biology#使用" target="_blank" rel="noopener noreferrer">查看使用说明<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up-right"></use></svg></a>
+    </div></section>
+  </main>
+  <footer class="footer wrap"><span><img width="25" height="25" src="assets/mark.svg" alt="">Blender 细胞建模作品展</span><button type="button" data-about>关于展厅</button><a href="#top">回到顶部<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-up"></use></svg></a></footer>
+
+  <dialog id="work-dialog" class="sheet" aria-labelledby="sheet-title">
+    <div class="sheet-inner">
+      <header class="sheet-head"><div><p id="sheet-kind" class="sheet-kind"></p><h2 id="sheet-title"></h2></div>
+        <button type="button" class="circle-control close-sheet" aria-label="关闭作品"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></button>
+      </header>
+      <div id="sheet-content"></div>
+    </div>
+  </dialog>
+  <dialog id="about-dialog" class="sheet about" aria-labelledby="about-title">
+    <div class="sheet-inner">
+      <header class="sheet-head"><img class="about-mark" src="assets/mark.svg" height="48" width="48" alt=""><button type="button" class="circle-control close-sheet" aria-label="关闭关于展厅"><svg class="icon" aria-hidden="true"><use href="assets/icons.svg#x"></use></svg></button></header>
+      <h2 id="about-title">关于微形</h2><p class="about-intro">微形收录了 Blender Cell Biology skill 制作的模型和动画。</p>
+      <p>分子模型沿用公开结构中的亚基位置。你可以转动整套装配，也可以移开遮挡，单独观察一个亚基。超净工作台则从整机展开到七个部件组。</p>
+      <p>每件作品都附有建模依据。模型的拆解间距和机制短片的节奏用于讲解结构与过程。</p>
+      <a class="text-link" href="#catalog" id="about-catalog">浏览展品目录<svg class="icon" aria-hidden="true"><use href="assets/icons.svg#arrow-right"></use></svg></a>
+    </div>
+  </dialog>
+</body>
+</html>

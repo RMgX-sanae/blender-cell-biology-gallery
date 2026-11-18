@@ -1,0 +1,16 @@
+{
+  "name": "microforma-cell-gallery",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "esbuild viewer.js --bundle --minify --format=esm --target=es2020 --legal-comments=eof --outfile=docs/viewer.bundle.js",
+    "preview": "sirv docs --host 127.0.0.1 --port 8765 --dev"
+  },
+  "dependencies": {
+    "three": "0.180.0"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.11",
+    "sirv-cli": "3.0.1"
+  }
+}
