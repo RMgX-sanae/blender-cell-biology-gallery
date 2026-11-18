@@ -54,10 +54,13 @@ img{display:block;max-width:100%}
 .hero-object{position:absolute;left:49%;top:48.5%;width:72%;height:83%;object-fit:contain;transform:translate(-50%,-50%);filter:drop-shadow(4px 14px 12px rgba(17,32,79,.19))}
 .hero-layout[data-feature="bench"] .hero-object{width:80%;height:84%;top:49%}
 .hero-layout[data-feature="axoneme"] .hero-object{width:83%;height:79%}
-.orbit,.orbit-motion{position:absolute;left:49%;top:51.5%;width:97%;height:35%;border:1px solid #3454aa;border-radius:50%;transform:translate(-50%,-50%) rotate(-23deg)}
+.orbit{position:absolute;left:49%;top:51.5%;width:97%;height:35%;transform:translate(-50%,-50%) rotate(-23deg);color:#4b67ad}
+.orbit-back::before,.orbit-front::before{content:"";position:absolute;inset:0;border:1px solid currentColor;border-radius:50%}
+/* At either tip the continuous rear stroke sits beneath the whole 8px marker. */
 .orbit-back{z-index:-1}
-.orbit-front{clip-path:inset(70% 0 0 0);border-color:#526db7;opacity:.95}
-.art-caption{position:absolute;bottom:5.6%;right:3%;display:flex;align-items:center;gap:10px;color:#304b87;font:600 11px/1.2 var(--body);letter-spacing:.075em}
+.orbit-front{z-index:1;clip-path:inset(50% 6px -1px)}
+.orbit-motion{z-index:2;--orbit-period:17s}
+.art-caption{position:absolute;z-index:2;bottom:5.6%;right:3%;display:flex;align-items:center;gap:10px;color:#304b87;font:600 11px/1.2 var(--body);letter-spacing:.075em}
 .art-caption>span:first-child{width:30px;height:1px;background:#7489ba}
 .catalog{padding-top:clamp(39px,4.5vw,73px);padding-bottom:64px;scroll-margin-top:5px}
 .catalog-head{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:24px}
@@ -135,7 +138,7 @@ body:has(.sheet[open]){overflow:hidden}
 @media(max-width:730px){
   .wrap{padding-inline:clamp(19px,5.5vw,35px)}.masthead{height:61px}.brand{gap:7px}.brand img{width:30px;height:30px}.wordmark{font-size:24px}.masthead nav{gap:15px;font-size:13px}.masthead .nav-about{display:none}.screening{padding:7px 11px;gap:4px}
   .hero-layout{grid-template-columns:1fr;grid-template-rows:auto auto auto;min-height:auto;padding-top:4px;padding-bottom:23px}
-  .hero-art{grid-column:1;grid-row:1;position:relative;right:auto;width:min(100%,490px);justify-self:center;height:clamp(222px,59vw,300px)}.hero-object{height:83%;width:66%;left:51%;top:50%}.hero-layout[data-feature="bench"] .hero-object{height:88%}.hero-layout[data-feature="axoneme"] .hero-object{width:76%;height:82%}.orbit,.orbit-motion{width:83%;height:29%;left:51%;top:52%}.art-caption{font-size:9px;bottom:4%;right:3%;gap:5px}.art-caption>span:first-child{width:19px}
+  .hero-art{grid-column:1;grid-row:1;position:relative;right:auto;width:min(100%,490px);justify-self:center;height:clamp(222px,59vw,300px)}.hero-object{height:83%;width:66%;left:51%;top:50%}.hero-layout[data-feature="bench"] .hero-object{height:88%}.hero-layout[data-feature="axoneme"] .hero-object{width:76%;height:82%}.orbit{width:83%;height:29%;left:51%;top:52%}.art-caption{font-size:9px;bottom:4%;right:3%;gap:5px}.art-caption>span:first-child{width:19px}
   .hero-copy{grid-column:1;grid-row:2;align-self:auto;padding-bottom:0;margin-top:6px}.feature-kicker{font-size:12px;gap:8px}.kicker-rule{width:20px}
   .hero h1{font-size:clamp(45px,10.5vw,65px);margin:10px 0 0;line-height:1.23}.hero-latin{font-size:clamp(26px,6.4vw,37px);margin:0 0 10px}.hero-summary{max-width:30em;font-size:15px;line-height:1.6}
   .primary-action{min-height:42px;margin-top:16px;padding-left:12px;font-size:14px}.action-arrow{width:35px;height:42px;padding:11px 8px;margin-left:3px}
@@ -151,16 +154,18 @@ body:has(.sheet[open]){overflow:hidden}
 @media(max-width:370px){.masthead nav{gap:8px}.wordmark{font-size:21px}.footer>span{width:100%}.art-caption{right:0}.filters button{padding-inline:9px}.stage-status{font-size:12px}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 .brand,.wordmark{color:#092778}
-.object-rail{position:absolute;inset:0}
-.orbit-motion{z-index:1;border:none;clip-path:inset(-9% -2% -9% -2%)}
-.orbit-motion i{width:8px;height:8px;display:block;border:1px solid #12399e;background:#f8faff;border-radius:50%;position:absolute;left:4%;top:66%}
-@supports(offset-path:ellipse(50% 50% at 50% 50%)){
-  .orbit-motion i{left:0;top:0;offset-path:ellipse(50% 50% at 50% 50%);offset-rotate:0deg;offset-distance:43%}
-  .art-idle .orbit-motion i{animation-play-state:running}
-  html[data-motion="on"] .orbit-motion i{animation:orbit-travel 17s linear infinite;animation-play-state:paused}
-  html[data-motion="on"].art-idle .orbit-motion i{animation-play-state:running}
+.object-rail{position:absolute;inset:0;z-index:0}
+.orbit-dot{position:absolute;left:50%;top:100%;transform:translate(-50%,-50%);width:8px;height:8px;border:1px solid #12399e;background:#f8faff;border-radius:50%}
+@supports(offset-path:ellipse(calc(50% - .5px) calc(50% - .5px) at 50% 50%)){
+  .orbit-dot{left:0;top:0;transform:none;offset-path:ellipse(calc(50% - .5px) calc(50% - .5px) at 50% 50%);offset-rotate:0deg;offset-distance:43%}
+  /* Both tracks start at 43% of the same lap. The marker changes layer only at a tangent. */
+  .orbit-motion,.orbit-dot{animation-duration:var(--orbit-period);animation-delay:calc(-.43 * var(--orbit-period));animation-iteration-count:infinite;animation-play-state:paused}
+  .orbit-motion{animation-name:orbit-depth;animation-timing-function:step-end}
+  .orbit-dot{animation-name:orbit-travel;animation-timing-function:linear}
+  html[data-motion="on"].art-idle :is(.orbit-motion,.orbit-dot){animation-play-state:running}
 }
-@keyframes orbit-travel{from{offset-distance:43%}to{offset-distance:143%}}
+@keyframes orbit-travel{from{offset-distance:0%}to{offset-distance:100%}}
+@keyframes orbit-depth{0%,100%{z-index:2}50%{z-index:-1}}
 .motion-toggle{position:relative;display:grid;place-items:center;width:38px;height:38px;margin-left:3px;color:#375496}
 .motion-toggle::before{content:"";position:absolute;left:-6px;height:16px;width:1px;background:#acbbdb}
 .motion-glyph{display:block;width:10px;height:12px;border-inline:3px solid currentColor}
@@ -186,7 +191,7 @@ html.page-enter .work-card:nth-child(-n+3) .card-image{animation:print-reveal .6
 .model-stage.is-ready canvas{animation:model-appear .27s ease-out both}
 @keyframes model-appear{from{opacity:.4}to{opacity:1}}
 html[data-motion="off"]{scroll-behavior:auto}
-html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="off"] *::after{animation:none!important;transition:none!important}
+html[data-motion="off"] :not(.orbit-motion,.orbit-dot),html[data-motion="off"] *::before,html[data-motion="off"] *::after{animation:none!important;transition:none!important}
 @media(hover:hover) and (pointer:fine){.motion-toggle:not(:disabled):hover{color:#002fa7;background:#e2eaff;border-radius:50%}}
 @media(max-width:730px){.motion-toggle{width:30px;height:34px;margin:0}.motion-toggle::before{left:-3px}.motion-glyph{width:8px;height:10px;border-width:2px}}
 @media(max-width:365px){.feature-pages{gap:6px}.feature-pages .circle-control{width:30px;height:30px}}
@@ -209,13 +214,11 @@ html[data-motion="off"] *,html[data-motion="off"] *::before,html[data-motion="of
   .invite-layout{display:grid;grid-template-columns:44px 1fr;gap:12px 14px;min-height:auto;padding-block:29px}.invite-symbol{width:42px;height:42px}
   .invite-copy p{font-size:13px;margin-top:4px}.invite-copy h2{font-size:25px}.invite-link{grid-column:2;justify-self:start;margin:0;padding:7px 11px;font-size:14px;gap:10px}
 }
-.hero::before{content:"";position:absolute;z-index:-1;inset:0;background:#e4eaff;clip-path:polygon(67% 0,81% 0,62% 100%,48% 100%);pointer-events:none}
 .art-print{position:absolute;inset:0;width:100%;height:100%;z-index:-2;overflow:visible}
 .plate-shape{display:none}
 [data-feature="hemocyanin"] .plate-molecule,[data-feature="bench"] .plate-workbench,[data-feature="axoneme"] .plate-axon{display:block}
-.fan-ink{transform-origin:591px 196px}
-html[data-motion="on"] .fan-ink{animation:fan-turn 8s cubic-bezier(.45,0,.55,1) infinite alternate;animation-play-state:paused}
-html[data-motion="on"].art-idle .fan-ink{animation-play-state:running}
-@keyframes fan-turn{from{transform:rotate(-4deg)}to{transform:rotate(5deg)}}
-@media(max-width:730px){.hero::before{clip-path:polygon(75% 0,104% 0,58% 55%,36% 55%)}.art-print{inset:-2% -2% 0;width:104%;height:104%}}
+html[data-motion="on"] .ring-accent{animation:ring-turn 8s cubic-bezier(.45,0,.55,1) infinite alternate;animation-play-state:paused}
+html[data-motion="on"].art-idle .ring-accent{animation-play-state:running}
+@keyframes ring-turn{from{transform:rotate(-4deg)}to{transform:rotate(5deg)}}
+@media(max-width:730px){.art-print{inset:2% 0;width:100%;height:96%}}
 @media(max-width:365px){.feature-pages{margin-top:12px;justify-self:start}}
